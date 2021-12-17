@@ -1,0 +1,805 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"work",
+				"worktype"
+			],
+			[
+				"known",
+				"known_files"
+			],
+			[
+				"poss",
+				"possible_work_types"
+			],
+			[
+				"form",
+				"formatted_folder"
+			],
+			[
+				"urls",
+				"urls_by_landing"
+			],
+			[
+				"reu",
+				"requested_landing_pages"
+			],
+			[
+				"reque",
+				"requested_landing_pages"
+			],
+			[
+				"mtpo_",
+				"mtpo_url_folder_dict"
+			],
+			[
+				"curre",
+				"current_multiline_key"
+			],
+			[
+				"cur",
+				"current_multiline_field"
+			],
+			[
+				"pilo",
+				"pilot_subject_filepath"
+			],
+			[
+				"m_cate",
+				"m_category_quotients"
+			],
+			[
+				"keys",
+				"keys_to_output"
+			],
+			[
+				"objec",
+				"object_concepts_file"
+			],
+			[
+				"obje",
+				"object_concepts_file"
+			],
+			[
+				"word_is_hy",
+				"word_is_hyponym_of_list"
+			],
+			[
+				"word_is",
+				"word_is_hyponym_of_multisense"
+			],
+			[
+				"p_words_",
+				"p_words_to_avoid"
+			],
+			[
+				"amb",
+				"ambiguous_str"
+			],
+			[
+				"ambig",
+				"ambiguous_str"
+			],
+			[
+				"ambi",
+				"ambiguous_str"
+			],
+			[
+				"catego",
+				"categorical"
+			],
+			[
+				"pick",
+				"pick_category"
+			],
+			[
+				"m_word",
+				"m_word_exclude_list"
+			],
+			[
+				"incre",
+				"increment_category_count"
+			],
+			[
+				"current",
+				"current_category"
+			],
+			[
+				"not",
+				"not_hyponym_key"
+			],
+			[
+				"m_",
+				"m_word_exclude_list"
+			],
+			[
+				"rand",
+				"random_index"
+			],
+			[
+				"random",
+				"random_table_index"
+			],
+			[
+				"hy",
+				"hyponym_key"
+			],
+			[
+				"p_wordsens",
+				"p_wordsense1"
+			],
+			[
+				"m_cat",
+				"m_categories_str"
+			],
+			[
+				"m_catego",
+				"m_categories_str"
+			],
+			[
+				"m_categor",
+				"m_category_quotients"
+			],
+			[
+				"m_categ",
+				"m_categories_str"
+			],
+			[
+				"maxim",
+				"maximum_word_repeat"
+			],
+			[
+				"m_word_sens",
+				"m_word_senses_str"
+			],
+			[
+				"object_con",
+				"object_concepts_word_exclude_list"
+			],
+			[
+				"concr",
+				"concreteness_word_exclude_list"
+			],
+			[
+				"error",
+				"errored_words"
+			],
+			[
+				"word_Sens",
+				"word_senses"
+			],
+			[
+				"get_word",
+				"get_word_senses"
+			],
+			[
+				"target_cate",
+				"target_category_name"
+			],
+			[
+				"all_con",
+				"all_conditions_satisfied"
+			],
+			[
+				"curren",
+				"current_category"
+			],
+			[
+				"new_cate",
+				"new_category_name"
+			],
+			[
+				"pandas_",
+				"pandas_table_header"
+			],
+			[
+				"comparis",
+				"comparison_table_lines"
+			],
+			[
+				"target_wor",
+				"target_wordsense_name"
+			],
+			[
+				"new_c",
+				"new_category_name"
+			],
+			[
+				"attr",
+				"attribute_indice_map"
+			],
+			[
+				"p_categori",
+				"p_category_dist_counts"
+			],
+			[
+				"current_",
+				"current_working_directory"
+			],
+			[
+				"header",
+				"header_categories"
+			],
+			[
+				"hypon",
+				"hyponym_is_cat"
+			],
+			[
+				"set",
+				"set_run_parameters"
+			],
+			[
+				"s_",
+				"s_category_to_attribute_index"
+			],
+			[
+				"is_ca",
+				"word_is_of_category"
+			],
+			[
+				"p_cat",
+				"p_category1"
+			],
+			[
+				"p_Cat",
+				"p_category1"
+			],
+			[
+				"s_categ",
+				"s_category_to_attribute_index"
+			],
+			[
+				"tried",
+				"tried_indices"
+			],
+			[
+				"p_hyponym",
+				"p_not_hyponym"
+			],
+			[
+				"read",
+				"read_triples_json"
+			],
+			[
+				"is_",
+				"is_category"
+			],
+			[
+				"hypern",
+				"hypernym_collection"
+			],
+			[
+				"m_pos",
+				"m_pos_filtered_table"
+			],
+			[
+				"new_",
+				"new_pseudo_random_num"
+			],
+			[
+				"category2_",
+				"category2_key"
+			],
+			[
+				"category1_",
+				"category1_key"
+			],
+			[
+				"category_",
+				"get_category_string"
+			],
+			[
+				"categor",
+				"category1_key"
+			],
+			[
+				"categ",
+				"category1_wordsenses"
+			],
+			[
+				"object_concepts_",
+				"object_concepts_column_key"
+			],
+			[
+				"cocnre",
+				"concreteness_column_key"
+			],
+			[
+				"conc",
+				"concrete_word_list"
+			],
+			[
+				"p_tabl",
+				"p_table_row"
+			],
+			[
+				"m_conc",
+				"m_concreteness_pos_map"
+			],
+			[
+				"object",
+				"object_concepts_pos_map"
+			],
+			[
+				"Word",
+				"WordTripleGenerator"
+			],
+			[
+				"target",
+				"target_category"
+			],
+			[
+				"from_",
+				"from_object_concepts"
+			],
+			[
+				"concre",
+				"concreteness_column_key"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"stop",
+				"stopword_criteria"
+			],
+			[
+				"percen",
+				"percent_type"
+			],
+			[
+				"asc",
+				"ascii_token"
+			],
+			[
+				"first",
+				"first_word_index"
+			],
+			[
+				"m_cor",
+				"m_corpus_lexicon"
+			],
+			[
+				"load",
+				"load_matrix"
+			],
+			[
+				"p_table",
+				"p_table_filename"
+			],
+			[
+				"to",
+				"tostr_permutations"
+			],
+			[
+				"m_le",
+				"m_corpus_lexicon"
+			],
+			[
+				"lexi",
+				"lexicon_file"
+			],
+			[
+				"m_corpu",
+				"m_corpus_lexicon"
+			],
+			[
+				"m_adja",
+				"m_adjacency_dict"
+			],
+			[
+				"create_",
+				"create_matrix"
+			],
+			[
+				"m_adjacen",
+				"m_adjacency_matrix"
+			],
+			[
+				"p_cor",
+				"p_corpus_name"
+			],
+			[
+				"toke",
+				"tokenized_line"
+			],
+			[
+				"m_lem",
+				"m_lemmatize_flag"
+			],
+			[
+				"prepare",
+				"prepared_sentence"
+			],
+			[
+				"setnenc",
+				"sentence_words"
+			],
+			[
+				"simil",
+				"Similarity"
+			],
+			[
+				"simila",
+				"similarity_measure"
+			],
+			[
+				"sim",
+				"similarity_measure"
+			],
+			[
+				"m_tra",
+				"m_transactions"
+			],
+			[
+				"cre",
+				"credit_total"
+			],
+			[
+				"m_trans",
+				"m_trans_by_type"
+			],
+			[
+				"dine",
+				"dineout_total"
+			],
+			[
+				"ass",
+				"assign_transaction_type"
+			],
+			[
+				"m_tran",
+				"m_transactionfile_path"
+			],
+			[
+				"transaction",
+				"transaction_type"
+			],
+			[
+				"my",
+				"myTransitionEventListener"
+			],
+			[
+				"extr",
+				"extracted_features_filenames"
+			],
+			[
+				"ill",
+				"illegal_chars"
+			],
+			[
+				"rs",
+				"rsync_ef_file"
+			],
+			[
+				"vou",
+				"volume_id"
+			],
+			[
+				"vol",
+				"volume_id"
+			],
+			[
+				"dedup",
+				"deduped_keys"
+			],
+			[
+				"dedu",
+				"deduped_keys"
+			],
+			[
+				"p_file",
+				"p_file_extension"
+			],
+			[
+				"director",
+				"directory_files"
+			],
+			[
+				"bib",
+				"bib_api_filepath"
+			],
+			[
+				"unfound",
+				"unfound_volumes"
+			],
+			[
+				"mods_id",
+				"mods_id_column"
+			],
+			[
+				"col",
+				"column_values"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "mtpo_scrape.py",
+			"settings":
+			{
+				"buffer_size": 6572,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 179.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"markdown",
+				"Preferences: MarkdownLivePreview Settings"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: lint",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/PeregrinePickle/Documents/School/New York University/Dissertation/datasets/twain"
+	],
+	"file_history":
+	[
+		"/Users/peregrinepickle/Documents/school/nyu/dissertation/code/twain/aolm_marktwain.sublime-workspace",
+		"/Users/PeregrinePickle/Documents/School/New York University/Dissertation/datasets/twain/mtpo/autobiographies/formatted/MTDP10364.xml",
+		"/Users/PeregrinePickle/Documents/School/New York University/Dissertation/datasets/twain/mtpo/autobiographies/formatted/MTDP10000.xml",
+		"/Users/PeregrinePickle/Documents/School/New York University/Dissertation/datasets/twain/mtpo_scrape.py",
+		"/Users/PeregrinePickle/Documents/School/New York University/Dissertation/datasets/dickinson/correspondences/tei/formatted/DEAmsEDCSBIIa678.1b.xml",
+		"/Users/PeregrinePickle/Desktop/great_lakes_info.txt",
+		"/Users/PeregrinePickle/Documents/Work/SimExp/projects/neuromod/language/wordnet/README.md",
+		"/Users/PeregrinePickle/Documents/Work/SimExp/projects/neuromod/language/wordnet/scripts/generate_wn_triples.py",
+		"/Users/PeregrinePickle/Documents/Work/SimExp/projects/neuromod/language/wordnet/data/input/example/animate_inanimate_triples_jonathan.json",
+		"/Volumes/CANADIANUSB/Users/PeregrinePickle/Trash/untrunc-master/track.cpp",
+		"/Volumes/CANADIANUSB/Users/PeregrinePickle/Trash/untrunc-master/libav-12.3/libavcodec/h264dec.h",
+		"/Volumes/CANADIANUSB/Users/PeregrinePickle/Trash/untrunc-master/libav-12.3/libavutil/thread.h"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 136.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"</body>",
+			"script_arguments",
+			"url_folder_dict",
+			"landing_genre_dict",
+			"requested_landing_pages",
+			"possible_work_types",
+			"mtpo_urls",
+			"_urls",
+			"landing_genre_dict",
+			"\t",
+			"folder",
+			"data",
+			"\"autobiographies\"",
+			"autobiographies",
+			" + \"original\" + os.sep",
+			"mtpo_folders",
+			"\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "mtpo_scrape.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "python"
+							},
+							"markdonw_live_preview_last_run": 1568038609.14,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3009.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "aolm_marktwain.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
