@@ -66,6 +66,151 @@ def print_debug_header(p_title, p_header_width=80, p_header_char="="):
 
 # Primary functions
 
+class GutenbergReader:
+
+	# Constructor and private methods
+
+	def __init__(self, p_text_filepath, p_metadata_filepath):
+
+		# 0. Save parameters
+		self.m_text_filepath = p_text_filepath
+		self.m_metadata_filepath = p_metadata_filepath
+
+		# 1. Member field initialization
+
+		# Stores chapter first and lines, in chapter-order
+		self.m_components = OrderedDict()
+
+		# Stores lines of the text file
+		self.m_text_lines = []
+
+		# Stores json components of metadata file
+		self.m_metadata_json = {}
+
+		# 2. Read input files
+		self.__read_text_file()
+		self.__read_metadata_file()
+
+		# 3. Read input components by keys and in order specified from text file
+		self.read_components()
+
+		# 4. Save components into metadata json
+		self.m_metadata_json["components"] = self.m_components
+
+	def __read_metadata_file(self):
+
+		# 1. Read in metadata file for text file
+		with open(self.m_metadata_filepath, "r") as metadata_file:
+			self.m_metadata_json = json.load(metadata_file)
+
+		# A. Check to see if text has already been transformed into json, and if it has, clear them for a new reading
+		if len(self.m_metadata_json["components"]) > 0:
+			self.m_metadata_json["components"] = {}
+
+	def __read_text_file(self):
+
+		# 1. Read in text file
+		with open(self.m_text_filepath, "r") as text_file:
+			self.m_text_lines = text_file.readlines()
+
+	# Public methods
+
+	def read_components(self):
+
+		# 0. Reading through text file starting at first line
+		line_index = 0
+
+		# 1. Go through component keys, reading components specified by them in order
+		for input_key in self.m_metadata_json["keys"]["order"]:
+
+			# A. Read this component and the line where reading stopped
+			self.m_components[input_key], line_index = \
+				GutenbergReader.read_component(
+					(self.m_metadata_json["keys"]["input"][input_key]["startline"],
+				 	 self.m_metadata_json["keys"]["input"][input_key]["endline"]),
+					self.m_text_lines,
+					line_index)
+
+			# B. Check to see if this component needs to be divided into subcomponents
+			if "subcomponents" in self.m_metadata_json["keys"]["input"][input_key]:
+
+				# I. Save subcomponent prefixes for reading and writing
+				input_prefix = self.m_metadata_json["keys"]["input"][input_key]["subcomponent_input_prefix"]
+				output_prefix = self.m_metadata_json["keys"]["output"][input_key]
+
+				# II. Determine line indices where input prefix exists
+				subcomp_indices = [[index] for index in range(len(self.m_components[input_key])) if input_prefix in self.m_components[input_key][index]]
+				for item_index in range(len(subcomp_indices)):
+					if item_index + 1 < len(subcomp_indices):
+						subcomp_indices[item_index].append(subcomp_indices[item_index + 1][0] - 1)
+					else:
+						subcomp_indices[item_index].append(len(self.m_components[input_key]) - 1)
+
+				# III. Split apart component into subcomponents
+				subcomponents = OrderedDict()
+				for item in subcomp_indices:
+					subcomponents[output_prefix + self.m_components[input_key][item[0]]] = \
+						self.m_components[input_key][item[0] + 1:item[1] + 1]
+
+				# IV. Replace full text component with dictionary subcomponents
+				self.m_components[input_key] = subcomponents
+
+	def output(self, p_metadata_filepath):
+
+		# 1. Write out the new json data to the metadata json file
+		with open(p_metadata_filepath, "w") as output_file:
+			json.dump(self.m_metadata_json, output_file, indent=4)
+
+
+	# Static methods
+
+	@staticmethod
+	def read_component(p_line_keys, p_text_lines, p_line_start_index):
+		
+		# 0. Line keys
+		start_key = p_line_keys[0]
+		end_key = p_line_keys[1]
+
+		# 0. Text component
+		component_lines = []
+
+		# 0. Search flags
+		start_key_found = False
+		end_key_found = False
+
+		# 0. Line stop index to return back
+		line_stop_index = p_line_start_index
+
+		# 1. Gather text lines for component between start and end keys, inclusive
+		for index in range(p_line_start_index, len(p_text_lines)):
+
+			# A. Stop reading if end line key was read
+			if end_key_found:
+				break
+
+			# B. Increment line stop index for future reading
+			line_stop_index += 1
+
+			# C. Strip line of white space
+			cleaned_line = p_text_lines[index].strip()
+
+			# D. Search for start key if not yet found
+			if not start_key_found:
+				if start_key in cleaned_line:
+					component_lines.append(cleaned_line)
+					start_key_found = True
+			else:
+				if end_key in cleaned_line:
+					end_key_found = True
+				component_lines.append(cleaned_line)
+
+		# 2. Return component between start and end line keys, inclusive
+		#    or between start line key and end of file if end line key not found
+		#	 and return the line where reading ended
+		return component_lines, line_stop_index
+			
+
+
 def read_components(p_text_filepath, p_metadata_filepath, p_display_components=False):
 
 	# 0. Stores chapter first and lines, in chapter-order
@@ -106,6 +251,7 @@ def read_components(p_text_filepath, p_metadata_filepath, p_display_components=F
 	# A. Save the file header
 	header_content = []
 	index = 0
+	print(frontmatter_endline)
 	while frontmatter_endline != text_lines[index].strip():
 		header_content.append(text_lines[index].strip())
 		index += 1
@@ -118,7 +264,11 @@ def read_components(p_text_filepath, p_metadata_filepath, p_display_components=F
 	component_key = ""
 	footer_content = []
 	start_line = ""
-	for index in range(index + 1, len(text_lines) - 1):
+	for index in range(index + 1, len(text_lines)):
+
+		# Skip blank lines
+		if 0 == len(text_lines[index].strip()):
+			continue
 
 		# I. Look for the chapter prefix
 		if input_keys["component_input_prefix"] in text_lines[index]:
@@ -128,7 +278,6 @@ def read_components(p_text_filepath, p_metadata_filepath, p_display_components=F
 
 			# b. Save the chapter prefix-containing line as a key
 			component_key = output_keys["component_output_prefix"] + text_lines[index].strip()
-			# print(f"Chapter key: {component_key}")
 
 			# c. Look for the actual start of the chapter
 			index += 1
@@ -160,22 +309,25 @@ def read_components(p_text_filepath, p_metadata_filepath, p_display_components=F
 				# iv. Go to the next line
 				index += 1
 
-			# f. Save the last entry in the ordered dictionary if found
-			if input_keys["body_endline"] == text_lines[index].strip():
+			if input_keys["body_endline"] != text_lines[index].strip():
 
-				# i. Save the last line as part of the last body component
-				# as part of the footer.
-				# (This will be a Gutenberg marker indicating the end of content.)
-				footer_content.append(text_lines[index].strip())
+				print("Saving body endline: {0}".format(text_lines[index].strip()))
 
-				# ii. Indicate body reading is done and can move on to footer
+				# f. Save the last line of the body
+				body_content.append(text_lines[index].strip())
+
+				# g. Save the last body component
+				file_data[component_key] = body_content			
+
+				# h. Indicate body reading is done and can move on to footer
 				body_endline_found = True
 
-				# iii. Save the last body component
-				file_data[component_key] = body_content
+				footer_content = []
 
 		# II. Read the footer if the body has ended
 		elif body_endline_found:
+
+			# print("text_lines[{0}]: {1}".format(index, text_lines[index]))
 
 			# Read footer
 			footer_content.append(text_lines[index].strip())
@@ -225,9 +377,19 @@ def write_components_to_metadata(p_file_data, p_metadata_filepath):
 
 	# 2. Write out the new json data to the metadata json file
 	with open(p_metadata_filepath, "w") as output_file:
-		json.dump(metadata_json, output_file)
+		json.dump(metadata_json, output_file, indent=4)
 
-def main(p_txt_filename):
+def main(p_txt_filename, p_json_filename):
+
+	# 0. Text file path and metadata json file path inferred form text filename
+	text_filepath = paths["input"] + p_txt_filename
+	metadata_filepath = paths["input"] + p_json_filename
+
+	reader = GutenbergReader(text_filepath, metadata_filepath)
+	reader.output(metadata_filepath)
+
+	if True:
+		return
 
 	# 0. Text file path and metadata json file path inferred form text filename
 	text_filepath = paths["input"] + p_txt_filename
@@ -251,4 +413,4 @@ def main(p_txt_filename):
 
 if "__main__" == __name__:
 	if len(sys.argv) > 1:
-		main(sys.argv[1] if len(sys.argv) > 1 else "")
+		main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "")
